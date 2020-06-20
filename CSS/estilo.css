@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Informações de formatação (exemplos):
+ * .formatacao h3 > formata todos os h3 dentro da classe formatacao.
+ * h3.formatacao > formata todos os h3 que tem a classe formatacao.
+ */ 
+
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background: #fff url(../Imagens/Layout/fundo.png) repeat-x top left;
+}
+
+#container {
+    width: 750px;
+    margin: 0 auto;
+}
+
+#topo {
+    height: 150px;
+    background: url(../Imagens/Layout/detalhe-topo.png) no-repeat right top;
+    padding-top: 25px;
+}
+
+.logo {
+    width: 152px;
+    height: 66px;
+    background: url(../Imagens/Layout/logo.png) no-repeat center;
+    text-indent: -3000px;
+}
+
+/* Navegação-horizontal */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#topo ul {
+    background: #b10333;
+    margin-top: 30px;
+    float: left;
+}
+
+#topo a {
+    font-size: 0.9em;
+    display: block;
+    padding: 0.5em 1.5em;
+    line-height: 2.1em;
+    text-decoration: none;
+    color: white;
+    
+    background: url(../Imagens/Layout/divisor.png) no-repeat left center;
+}
+
+#navegacao-horizontal li {
+    float: left;
+}
+
+#navegacao-horizontal .primeiro {
+    background: none;
+}
+
+#topo a:hover {
+    font-weight: bold;
+    color: #69001d;
+   
+}
+
+body.home #navegacao-horizontal a#home,
+body.brasil #navegacao-horizontal a#brasil,
+body.internacional #navegacao-horizontal a#internacional,
+body.economia #navegacao-horizontal a#economia,
+body.saude #navegacao-horizontal a#saude,
+body.ciencia #navegacao-horizontal a#ciencia,
+body.fotos #navegacao-horizontal a#fotos
+ {
+    color: #fff;
+    background: #de003e;
+    cursor: text;
+}
+
+#conteudo {
+    background: #f5f5f5;
+    margin-top: 60px;
+
+}
+/* Fim Navegação-horizontal*/
+
+/* No arquivo html as areas primário e secundarioforam colocadas à frente de latera para que, no caso
+ * de leitores de tela, seja carregado conforme essa order, para faciliatr questões de acessibilidade
+ * e com isso se faz necessário o ajuste de margem nos componentes primario, secundario e lateral para
+ * que sejam posicionados na forma correta na visualização do site:
+ * Componente lateral, à esquerda;
+ * Componente principal, ao centro;
+ * Componente secundário, à direita.
+ *
+ * TAMANHOS DIFERENTES DO CONTEÚDO PRIMÁRIO
+ * O contúdo primario tem tamanho variado dependendo da página. Para esse ajuste foi adicionada um id
+ * no body da página para selecionar a forma que ele irá se comportar.
+*/
+
+#secundario {
+    width: 270px;
+    float: left;
+    margin: 0 0 20px 15px; 
+    /* 15 = margem direita da borda do container */
+}
+
+#lateral {
+    width: 180px;
+    float: left;
+    margin: 0 0 20px -750px;
+    /* -750 = largura do container */
+}
+
+#primario {
+    width: 270px;
+    float: left;
+    margin: 0 0 20px 195px; 
+    /* 195 = 180 (width lateral) + 15 ( (container - primario - secundario) / 2 )*/
+}
+
+#duas-colunas #primario {
+    width: 555px; /* 555 = 750(width container) - 180(width lateral) - 15(margem) */
+}
+
+#uma-coluna #primario {
+    width: 750px; /* 750 = 750(width container) */
+    margin: 0 0 20px 0; 
+}
+
+#primario .caixa-conteudo img {
+    border: 3px solid #dfdfdf;
+    width: 97%;
+    
+}
+
+
+#secundario .caixa-conteudo img {
+    border: 3px solid #dfdfdf;
+    width: 97%
+}
+
+#duas-colunas .caixa-conteudo p,
+#uma-coluna .caixa-conteudo p {
+    padding-top: 30px; 
+    line-height: 30px;
+    font-size: 1.2em;
+}
+
+#duas-colunas .caixa-conteudo img,
+#uma-coluna .caixa-conteudo img {
+    margin-top: 10px; 
+}
+
+h3 {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    display: inline;
+    padding: 3px;
+}
+
+#primario h3 {
+    background: #b10333;
+    color: #fff;
+}
+
+#secundario h3 {
+    background: #de003e;
+    color: black;
+}
+
+
+/*caixa*/
+
+.caixa {
+    background: #f3f3f3 url(../Imagens/Layout/fundo-caixa.png);
+    margin: 10px 0;
+    padding: 5px;
+}
+
+h2 {
+    font-size: 1em;
+    background: #294c71;
+    color: #fff;
+    padding: 5px;
+    letter-spacing: 3px;
+}
+
+
+.caixa-conteudo {
+    background: #fff;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+#primario .caixa-conteudo a,
+#secundario .caixa-conteudo a,
+#lateral .caixa-conteudo a {
+    text-decoration: none;
+    font-size: 0.9em;
+    color: #000;
+    font-weight: 500;
+    line-height: 30px;
+    display: block;
+    padding: 3px;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+
+
+#lateral .caixa-conteudo a:hover {
+    background: #f9f9f9 url(../Imagens/Layout/marcador.png) no-repeat left center;
+    color: #a1a1a1;
+    padding-left: 20px;
+}
+
+label {
+    cursor: pointer;
+}
+
+.caixa-conteudo input {
+    width: 146px;
+    padding: 5px;
+    font-size: 0.9em;
+    background: #fff;
+    margin-top: 5px;
+}
+
+.caixa-conteudo input.submit {
+    width: 159px;
+    color: #fff;
+    background-color: #b10333;
+    border: 2px solid #870529;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.caixa-auxiliar {
+    background: #fafafa;
+    font-size: 0.8em;
+}
+
+.caixa-auxiliar img {
+    width: 95px;
+    float: left;
+    margin-right: 5px;
+    height: 63px;
+}
+
+.caixa-auxiliar li {
+    height: 60px;
+    margin: 0 3px;
+}
+
+.caixa-auxiliar h4 {
+    text-transform: uppercase;
+    color: rgb(31, 161, 204);
+    font-size: 1em;
+}
+
+.caixa-auxiliar a {
+    text-decoration: none;
+    color: black;
+}
+
+.caixa-auxiliar li {
+    border-bottom: 1px solid #f3f3f3;
+    padding: 10px 0;
+}
+
+.caixa-auxiliar li:hover {
+    background: #eee;
+    cursor: pointer;
+}
+/*rodape*/
+#container-rodape {
+    clear: both;
+    background: #294c71;
+    padding: 20px;
+}
+
+#rodape {
+    width: 750px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
